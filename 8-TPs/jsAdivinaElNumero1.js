@@ -9,12 +9,12 @@ de no ser igual se debe informar si “falta…”  para llegar al número secre
 */
 var numeroSecreto; 
 var contadorIntentos = 0;
-var randomNumber = Math.floor(Math.random()* (101-1)+ 1);
+var randomNumber;
 
 
 function comenzar()
 {
-  
+  randomNumber = Math.floor(Math.random()* (101-1)+ 1);
   console.log(randomNumber);
   
 }
@@ -24,12 +24,12 @@ function verificar()
   contadorIntentos++
   numeroSecreto = document.getElementById("numero").value;
   
-  if (randomNumber == numeroSecreto)
-  document.getElementById("intentos").value = ("Usted es un ganador en " + contadorIntentos + " intentos!")
-  else if (numeroSecreto < randomNumber)
-  document.getElementById("intentos").value = ("Te faltaron " + (randomNumber - numeroSecreto));
-  else if (numeroSecreto > randomNumber)
-  document.getElementById("intentos").value = ("Te pasaste por " + (numeroSecreto - randomNumber)); 
-    
+    if (randomNumber == numeroSecreto){
+      document.getElementById("intentos").value = ("Usted es un ganador en " + contadorIntentos + " intentos!")
+    }else if (numeroSecreto < randomNumber){
+      document.getElementById("intentos").value = ("Te faltaron " + (randomNumber - numeroSecreto));
+    }else if (numeroSecreto > randomNumber){
+      document.getElementById("intentos").value = ("Te pasaste por " + (numeroSecreto - randomNumber)); 
+    }
 
 }

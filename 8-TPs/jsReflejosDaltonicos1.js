@@ -6,47 +6,48 @@ mostrara el texto de un color entre los 6 posibles
 */
 
 var tiempoInicio;
-var colorRandom;
-var azul ="Azul";
-var verde ="Verde"
-var amarillo ="Amarillo"
-var celeste ="Celeste"
-var marron ="Marron"
-var rojo ="Rojo"
+var colorRandom = Math.floor(Math.random() * (7-1) + 1);
+var input;
+
+
 function comenzar()
 {
-colorRandom = Math.floor(Math.random() * (7-1) + 1); 
-document.getElementById("ColorElegido").value = colorRandom;
-console.log(colorRandom);
+    tiempoInicio = Date.now();
+    
+    console.log(colorRandom)
 
-switch (colorRandom) {
-    case 1:
-        document.getElementById("ColorElegido").value = "Azul"
-        break;
-    case 2:
-        document.getElementById("ColorElegido").value = "Verde"
-        break;
-    case 3:
-        document.getElementById("ColorElegido").value = "Amarillo"
-        break;
-    case 4:
-        document.getElementById("ColorElegido").value = "Celeste"
-        break;
-    case 5:
-        document.getElementById("ColorElegido").value = "Marron"
-        break;
-    case 6:
-        document.getElementById("ColorElegido").value = "Rojo"
-        break;
-    default:
-        break;
-}
+    switch (colorRandom) {
+        case 1:
+            input = "azul"
+            break;
+        case 2:
+            input = "verde"
+            break;
+        case 3:
+            input = "amarillo"
+            break;
+        case 4:
+            input = "celeste"
+            break;
+        case 5:
+            input = "marron"
+            break;
+        case 6:
+            input = "rojo"
+            break;
+        default:
+            break;
+    }
+    document.getElementById("ColorElegido").value = input;
 }
 
 function Responder(colorParametro)
 {
+    
+    if (input == colorParametro) {
+        var tiempoTardo = Date.now();
+        var resultado = (tiempoTardo - tiempoInicio) / 1000;
+        alert("Ganaste en " + resultado + " segundos!");
+    }
 
-    
 }
-    
-    

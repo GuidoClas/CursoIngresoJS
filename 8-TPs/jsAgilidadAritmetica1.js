@@ -13,50 +13,47 @@ var operacion;
 
 function comenzar()
 {
-var caso = Math.floor(Math.random()* (5 - 1) +1);
-var numero1
-var numero2
-console.log(caso);
+    var caso = Math.floor(Math.random()* (5 - 1) +1);
+    var numero1 = Math.floor(Math.random()* (10 - 1)+ 1);
+    var numero2 = Math.floor(Math.random()* (10 - 1) + 1);	
+    console.log(caso);
 
-document.getElementById("PrimerNumero").value = Math.floor(Math.random()* (10 - 1)+ 1);
-document.getElementById("SegundoNumero").value = Math.floor(Math.random()* (10 - 1) + 1);	
+    document.getElementById("PrimerNumero").value = numero1;
+    document.getElementById("SegundoNumero").value = numero2;
 
 
-switch (caso) {
-    case 1:
-        document.getElementById("Operador").value = "+";
-        numero1 = parseInt(document.getElementById("PrimerNumero").value)
-        numero2 = parseInt(document.getElementById("SegundoNumero").value)
+    switch (caso) {
+        case 1:
+            document.getElementById("Operador").value = "+";
+            operacion = numero1 + numero2;
+            break;
+        case 2:
+            document.getElementById("Operador").value = "-";
+            operacion = (numero1 - numero2);
+            break;
+        case 3:
+            document.getElementById("Operador").value = "*";
+            operacion = (numero1 * numero2);
+            break;
+        case 4:
+            document.getElementById("Operador").value = "/";
+            operacion = (numero1 / numero2)            
+            break;
 
-        operacion = numero1 + numero2
-        break;
-    case 2:
-        document.getElementById("Operador").value = "-";
-        operacion = (document.getElementById("PrimerNumero").value - document.getElementById("SegundoNumero").value)
-        break;
-    case 3:
-        document.getElementById("Operador").value = "*";
-        operacion = (document.getElementById("PrimerNumero").value * document.getElementById("SegundoNumero").value)
-        break;
-    case 4:
-        document.getElementById("Operador").value = "/";
-        operacion = (document.getElementById("PrimerNumero").value / document.getElementById("SegundoNumero").value)            
-        break;
-
-    default:
-        break;
-}
-console.log(operacion)
+        default:
+            break;
+    }
+    console.log(operacion)
 }
 
 function Responder()
 {
-respuesta = parseInt(document.getElementById("Respuesta").value);
+    respuesta = parseInt(document.getElementById("Respuesta").value);
 
-if (respuesta == operacion) {
-    alert("Usted acertó!");
-} else {
-    alert("Usted se equivocó!");
-}
+    if (respuesta == operacion) {
+        alert("Usted acertó!");
+    } else {
+        alert("Usted se equivocó!");
+    }
 }
 //FIN DE LA FUNCIÓN
