@@ -1,7 +1,19 @@
 function mostrar()
 {
+    var clave = prompt("ingrese el número clave.");
+    var intentos = 0;
 
-var clave = prompt("ingrese el número clave.");
+    while (clave != "utn750") {
+        intentos++
+            if (intentos == 3) {
+            break;
+        }
+        clave = prompt("Error, ingrese nuevamente la clave.");
+    }
+    if (clave == "utn750") {
+        alert("Bienvenido!");
+    }       else {
+                alert("Llegaste al maximo de intentos!")
+    }
 
-
-}//FIN DE LA FUNCIÓN
+}
