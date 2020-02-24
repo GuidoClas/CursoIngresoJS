@@ -1,7 +1,6 @@
 function mostrar()
 {
 	var numero;
-	var contador=0;
 	var respuesta=true;
 	var sumaNegativos= 0;
 	var sumaPositivos= 0;
@@ -13,7 +12,50 @@ function mostrar()
 	var promedioNegativos;
 	var diferencia; 
 
-	while(respuesta){
+	do {
+		numero = prompt("Ingrese un numero");
+		while (isNaN(numero)) {
+			numero = prompt("Error, ingrese un numero valido");
+		}
+		numero = parseInt(numero);
+		respuesta = confirm("Desea continuar?");
+		
+		if (numero > 0) {
+			contadorPositivos++;
+			sumaPositivos+=numero;
+		} 
+		else if (numero < 0) {
+			contadorNegativos++;
+			sumaNegativos+=numero;
+		} else {
+			contadorCeros++;
+		}
+		if (numero % 2 == 0) {
+			contadorPares++;
+		}
+	} while (respuesta == true);
+
+	promedioPositivos = sumaPositivos/contadorPositivos;
+	promedioNegativos = sumaNegativos/contadorNegativos;
+	diferencia = sumaPositivos + sumaNegativos;
+	
+	document.write("Suma positivos: " + sumaPositivos + "</br>")
+	document.write("Suma Negativos: " + sumaNegativos + "</br>")
+	document.write("Contador Positivos: " + contadorPositivos + "</br>")
+	document.write("Contador Negativos: " + contadorNegativos + "</br>")
+	document.write("Contador Ceros: " + contadorCeros + "</br>")
+	document.write("Contador Pares: " + contadorPares + "</br>")
+	document.write("Promedio Positivos: " + promedioPositivos + "</br>")
+	document.write("Promedio Negativos: " + promedioNegativos + "</br>")
+	document.write("Diferencia: " + diferencia + "</br>")
+	
+}
+		
+
+
+
+/*
+while(respuesta){
 		numero = prompt("ingrese un numero");
 		numero = parseInt(numero);
 		respuesta = confirm("Desea continuar?");
@@ -62,16 +104,4 @@ function mostrar()
 	console.log(promedioPositivos);
 	console.log(promedioNegativos);
 	console.log(diferencia);
-
-	document.write("Suma positivos: " + sumaPositivos + "</br>")
-	document.write("Suma Negativos: " + sumaNegativos + "</br>")
-	document.write("Contador Positivos: " + contadorPositivos + "</br>")
-	document.write("Contador Negativos: " + contadorNegativos + "</br>")
-	document.write("Contador Ceros: " + contadorCeros + "</br>")
-	document.write("Contador Pares: " + contadorPares + "</br>")
-	document.write("Promedio Positivos: " + promedioPositivos + "</br>")
-	document.write("Promedio Negativos: " + promedioNegativos + "</br>")
-	document.write("Diferencia: " + diferencia + "</br>")
-
-	
-}
+	*/
