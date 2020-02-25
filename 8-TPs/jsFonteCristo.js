@@ -58,7 +58,43 @@ function NumerosDivisibles()
 function VerificarPrimo() 
 {
     var numero = document.getElementById("numero").value;
-    var resultado;
+    var contadorDivisores = 0;
+    var divisor = 0;
 
+    while (divisor <= numero) {
+        if (numero % divisor === 0) {
+            contadorDivisores++
+        }  
+        divisor++
+    }
+    if (contadorDivisores === 2) {
+        alert("El numero es primo");
+    } else {
+        alert("El numero no es primo");
+    }
+}
+
+function NumerosPrimos()
+{
+
+    var numero = document.getElementById("numero").value;
+    var contador = 0;
+    var contadorPrimos = 0;
+
+    while (contador<=numero) {
+        var divisor = 0;
+        var contadorDivisores = 0;
+        while (divisor <= contador) {
+            if (contador % divisor === 0) {
+                contadorDivisores++;
+            }
+            divisor++;
+        }
+        if (contadorDivisores === 2) {
+            contadorPrimos++;
+        }
+        contador++;
+    }
+    alert(contadorPrimos);
 
 }
