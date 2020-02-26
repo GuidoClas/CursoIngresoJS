@@ -46,7 +46,7 @@ function NumerosDivisibles()
     var contadorDivisores = 0;
     var divisor = 0;
 
-    while (divisor <= numero) {
+    while (divisor <= 100) {
         if (numero % divisor === 0) {
             contadorDivisores++
         }  

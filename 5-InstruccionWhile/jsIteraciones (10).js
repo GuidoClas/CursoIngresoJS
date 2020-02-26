@@ -37,7 +37,7 @@ function mostrar()
 
 	promedioPositivos = sumaPositivos/contadorPositivos;
 	promedioNegativos = sumaNegativos/contadorNegativos;
-	diferencia = sumaPositivos + sumaNegativos;
+	diferencia = sumaPositivos - sumaNegativos;
 	
 	document.write("Suma positivos: " + sumaPositivos + "</br>")
 	document.write("Suma Negativos: " + sumaNegativos + "</br>")
